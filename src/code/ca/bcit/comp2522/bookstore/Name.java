@@ -22,6 +22,12 @@ public class Name implements Printable
         this.last = last;
     }
 
+    /**
+     * Validates constructor parameters.
+     *
+     * @param first first name not null or blank and length is less than MAX_NAME_LEN
+     * @param last last name not null or blank and length is less than MAX_NAME_LEN
+     */
     private void validate(final String first,
                           final String last)
     {
@@ -36,20 +42,38 @@ public class Name implements Printable
         }
     }
 
+    /**
+     * First name accessor method.
+     *
+     * @return first name
+     */
     public String getFirst()
     {
         return first;
     }
 
+    /**
+     * Last name accessor method.
+     *
+     * @return last name
+     */
     public String getLast()
     {
         return last;
     }
 
+    /**
+     * Name concatenator method.
+     *
+     * @return first name plus last name
+     */
     public String getName() {
         return first + " " + last;
     }
 
+    /**
+     * Displays name.
+     */
     @Override
     public void display()
     {

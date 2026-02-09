@@ -7,8 +7,14 @@ package ca.bcit.comp2522.bookstore;
  * @author Kian Castro
  * @version 1
  */
-public class Book implements Comparable<Book>, Printable, Reversible
+public class Book implements Comparable<Book>,
+                             Printable,
+                             Reversible
 {
+
+    public static final int MAX_TITLE_LEN = 100;
+    public static final int MIN_YEAR_PUBLISHABLE = 1;
+
     private final String title;
     private final int yearPublished;
     private final Author author;
@@ -20,28 +26,39 @@ public class Book implements Comparable<Book>, Printable, Reversible
      * @param yearPublished the publication year of the book
      * @param author the author of the book
      */
-    public Book(String title, int yearPublished, Author author)
+    public Book(final String title,
+                final int yearPublished,
+                final Author author)
     {
-        if(title == null ||
-                title.isBlank() ||
-                title.length() >= 100)
-        {
-            throw new IllegalArgumentException("Invalid title.");
-        }
-
-        if(yearPublished < 1 || yearPublished > Date.getCurrentYear())
-        {
-            throw new IllegalArgumentException("Invalid publication year.");
-        }
-
-        if(author == null)
-        {
-            throw new IllegalArgumentException("Author cannot be null.");
-        }
+        validate(title,
+                 yearPublished,
+                 author);
 
         this.title = title;
         this.yearPublished = yearPublished;
         this.author = author;
+    }
+
+    private void validate(final String title,
+                          final int yearPublished,
+                          final Author author)
+    {
+        if (title == null ||
+           title.isBlank() ||
+            title.length() >= MAX_TITLE_LEN)
+        {
+            throw new IllegalArgumentException("Invalid title.");
+        }
+
+        if (yearPublished < MIN_YEAR_PUBLISHABLE || yearPublished > Date.getCurrentYear())
+        {
+            throw new IllegalArgumentException("Invalid publication year.");
+        }
+
+        if (author == null)
+        {
+            throw new IllegalArgumentException("Author cannot be null.");
+        }
     }
 
     /**

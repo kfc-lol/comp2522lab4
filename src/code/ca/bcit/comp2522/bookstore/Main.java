@@ -1,8 +1,20 @@
 package ca.bcit.comp2522.bookstore;
 
+/**
+ * Main class implementing all classes.
+ *
+ * @author Jessie Yuen
+ *
+ * @version 1
+ */
 public class Main
 {
-    public static void main(String[] args)
+    /**
+     * Main method.
+     *
+     * @param args unused
+     */
+    public static void main(final String[] args)
     {
 
         Author orwell = new Author(
@@ -158,11 +170,6 @@ public class Main
                         new Date(1945, 3, 31),
                         new Name("Anne", "Frank"),
                         "Autobiography"
-                ),
-                new Person(
-                        new Date(1929, 6, 12),
-                        new Date(1945, 3, 31),
-                        new Name("Anne", "Frank")
                 )
         );
 
@@ -174,11 +181,6 @@ public class Main
                         new Date(2013, 12, 5),
                         new Name("Nelson", "Mandela"),
                         "Autobiography"
-                ),
-                new Person(
-                        new Date(1918, 7, 18),
-                        new Date(2013, 12, 5),
-                        new Name("Nelson", "Mandela")
                 )
         );
 

@@ -23,13 +23,27 @@ private final Person subject;
                  final int yearPublished,
                  final Author author,
                  final Person subject)
-{
-    super(title, yearPublished, author);
+    {
+        super(title,
+              yearPublished,
+              author);
+
+        validateSubject(subject);
+
+        this.subject = subject;
+    }
+
+    /**
+     * Validates if subject is not null.
+     *
+     * @param subject subject of biography
+     */
+    private void validateSubject(final Person subject)
+    {
         if(subject == null)
         {
             throw new IllegalArgumentException("Invalid subject.");
         }
-        this.subject = subject;
     }
 
     /**

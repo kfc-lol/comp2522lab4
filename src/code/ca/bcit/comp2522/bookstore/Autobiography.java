@@ -15,16 +15,15 @@ public class Autobiography extends Biography implements Printable
      * @param title the autobiography's title
      * @param yearPublished the publication year of the autobiography
      * @param author the author of the autobiography
-     * @param person the author (and subject) of the autobiography
      */
     public Autobiography(final String title,
                          final int yearPublished,
-                         final Author author,
-                         final Person person)
+                         final Author author)
     {
-        super(title, yearPublished, author, person);
-
-
+        super(title,
+              yearPublished,
+              author,
+              author);
     }
 
     /**
