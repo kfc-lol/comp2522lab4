@@ -2,10 +2,10 @@ package ca.bcit.comp2522.bookstore;
 
 public class Autobiography extends Biography implements Printable
 {
-    public Autobiography(String title,
-                         int yearPublished,
-                         Author author,
-                         Person person)
+    public Autobiography(final String title,
+                         final int yearPublished,
+                         final Author author,
+                         final Person person)
     {
         super(title, yearPublished, author, person);
 

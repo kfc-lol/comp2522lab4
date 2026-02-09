@@ -33,7 +33,8 @@ public class Person implements Comparable, Printable, Reversible
     @Override
     public void backward()
     {
-
+        final String reversed = new StringBuilder(name.toString()).reverse().toString();
+        System.out.println(reversed);
     }
 
     @Override

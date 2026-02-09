@@ -2,9 +2,9 @@ package ca.bcit.comp2522.bookstore;
 
 public class Book implements Comparable<Book>, Printable, Reversible
 {
-    private String title;
-    private int yearPublished;
-    private Author author;
+    private final String title;
+    private final int yearPublished;
+    private final Author author;
 
     public Book(String title, int yearPublished, Author author) {
         if (title == null || title.isBlank() || title.length() >= 100) {
