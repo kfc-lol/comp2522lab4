@@ -25,12 +25,12 @@ public class Name implements Printable
     private void validate(final String first,
                           final String last)
     {
-        if (first == null || first.isBlank() || first.length() > MAX_NAME_LEN)
+        if(first == null || first.isBlank() || first.length() > MAX_NAME_LEN)
         {
             throw new IllegalArgumentException("name is invalid.");
         }
 
-        if (last == null || last.isBlank() || last.length() > MAX_NAME_LEN)
+        if(last == null || last.isBlank() || last.length() > MAX_NAME_LEN)
         {
             throw new IllegalArgumentException("Name is invalid.");
         }

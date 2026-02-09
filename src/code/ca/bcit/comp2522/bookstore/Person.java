@@ -25,22 +25,34 @@ public class Person implements Comparable, Printable, Reversible
     @Override
     public void display()
     {
-        System.out.println("DOB: " + dateOfBirth);
-        System.out.println("Death Date: " + dateOfDeath);
-        System.out.println("Name: " + name);
+        System.out.print("Name: ");
+        name.display();
+
+        System.out.print(", DOB: ");
+        dateOfBirth.display();
+
+        if(dateOfDeath != null)
+        {
+            System.out.print(", Death Date: ");
+            dateOfDeath.display();
+        }
     }
 
     @Override
     public void backward()
     {
-        final String reversed = new StringBuilder(name.toString()).reverse().toString();
+        final String reversed =
+                new StringBuilder(
+                        name.getFirst() + " " + name.getLast()
+                ).reverse().toString();
+
         System.out.println(reversed);
     }
 
     @Override
     public int compareTo(Object o)
     {
-        if (this == o || !(o instanceof Person)){
+        if(this == o || !(o instanceof Person)){
             throw new IllegalArgumentException("Not a " + getClass());
         }
 

@@ -10,19 +10,23 @@ public Biography(final String title,
                  final Person subject)
 {
     super(title, yearPublished, author);
-        if (subject == null) {
+        if(subject == null)
+        {
             throw new IllegalArgumentException("Invalid subject.");
         }
         this.subject = subject;
     }
 
     @Override
-    public boolean equals(Object o){
-        if (this == o){
+    public boolean equals(Object o)
+    {
+        if(this == o)
+        {
             return true;
         }
 
-        if (!(o instanceof Biography)){
+        if(!(o instanceof Biography))
+        {
             return false;
         }
 
@@ -32,10 +36,18 @@ public Biography(final String title,
     }
 
     @Override
-    public void display(){
+    public int hashCode()
+    {
+        return subject.hashCode();
+    }
+
+    @Override
+    public void display()
+    {
         super.display();
         System.out.print(", Subject: ");
-        System.out.println("Title: " + getTitle());
+        subject.display();
     }
-    
+
+
 }

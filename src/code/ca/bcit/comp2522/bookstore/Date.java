@@ -9,7 +9,7 @@ package ca.bcit.comp2522.bookstore;
  * @author Jeevan Jandu
  * @version 1
  */
-public class Date
+public class Date implements Printable
 {
 
 
@@ -112,7 +112,7 @@ public class Date
      */
     private static void validateMonth(final int month)
     {
-        if (month < JANUARY || month > DECEMBER)
+        if(month < JANUARY || month > DECEMBER)
         {
             throw new IllegalArgumentException("Month " + month + " is invalid.");
         }
@@ -463,5 +463,13 @@ public class Date
         {
             throw new IllegalArgumentException("Not a valid month number");
         }
+    }
+
+    @Override
+    public void display() {
+        System.out.println(
+                "Date: " + getYYYYMMDD() +
+                        " (" + getDayOfTheWeek() + ")"
+        );
     }
 }
