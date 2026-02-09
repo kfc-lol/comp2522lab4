@@ -1,6 +1,6 @@
 package ca.bcit.comp2522.bookstore;
 
- /**
+/**
  * Represents a calendar date.
  * This class validates dates, determines leap years,
  * formats dates, and calculates the day of the week.
@@ -73,7 +73,7 @@ public class Date
     private final int day;
 
     /**
-     * Constructs a Date object.
+     * Constructs a ca.bcit.comp2522.bookstore.Date object.
      *
      * @param year the year
      * @param month the month
@@ -465,5 +465,3 @@ public class Date
         }
     }
 }
-Date.java
-13 KB

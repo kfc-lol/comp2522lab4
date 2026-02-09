@@ -4,16 +4,18 @@ public class Autobiography extends Biography implements Printable
 {
     public Autobiography(String title,
                          int yearPublished,
-                         Author author)
+                         Author author,
+                         Person person)
     {
-        super(title, yearPublished, author, author);
+        super(title, yearPublished, author, person);
 
 
     }
 
     @Override
-public void display(){
-    super.display();
+    public void display()
+    {
+        super.display();
     }
 
 }

@@ -24,6 +24,20 @@ public class Book implements Comparable<Book>, Printable, Reversible
         this.author = author;
     }
 
+    public String getTitle()
+    {
+        return title;
+    }
+
+    public int getYearPublished()
+    {
+        return yearPublished;
+    }
+
+    public Author getAuthor()
+    {
+        return author;
+    }
 
     @Override
     public int compareTo(Book other) {

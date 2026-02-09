@@ -2,7 +2,7 @@ package ca.bcit.comp2522.bookstore;
 
 public class Biography extends Book implements Printable
 {
-private Person subject;
+private final Person subject;
 
 public Biography(String title,
                  int yearPublished,
@@ -16,8 +16,6 @@ public Biography(String title,
         this.subject = subject;
     }
 
-
-}
     @Override
     public boolean equals(Object o){
         if (this == o){
@@ -28,15 +26,16 @@ public Biography(String title,
             return false;
         }
 
-        Biography other = (Biography) o;
+        Biography other;
+        other = (Biography) o;
         return subject.equals(other.subject);
     }
 
     @Override
     public void display(){
-    super.display();
-    System.out.print(", Subject: ");
-    subject.display();
+        super.display();
+        System.out.print(", Subject: ");
+        System.out.println("Title: " + getTitle());
     }
-
+    
 }
